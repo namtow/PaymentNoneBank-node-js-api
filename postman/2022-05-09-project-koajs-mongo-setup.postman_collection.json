@@ -1,0 +1,1199 @@
+{
+	"info": {
+		"_postman_id": "cf2673ec-e091-431b-af12-c4ac9962c1a6",
+		"name": "project-koajs-mongo-setup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"item": [
+				{
+					"name": "Country",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "{{application}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/register/country/lists",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"register",
+								"country",
+								"lists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "{{application}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"saylalalala5@gmail.com\",\n    \"password\": \"1234\",\n    \"country\": \"thailand\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/register/request/otp",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"register",
+								"request",
+								"otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Verify OTP",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "{{application}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@gmail.com\",\n    \"verifyType\": \"REGISTER\",\n    \"otp\": \"643726\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/register/submit/otp",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"register",
+								"submit",
+								"otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Verify  Resend OTP",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "{{application}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"saylalalala@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/register/verify/otp/resend",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"register",
+								"verify",
+								"otp",
+								"resend"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authenticator",
+			"item": [
+				{
+					"name": "Check Token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "{{application}}",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/authenticator/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"authenticator",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "{{application}}",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"email\": \"saylalalala@gmail.com\",\n \"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/authenticator/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"authenticator",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh_token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "{{application}}",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/authenticator/refresh_token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"authenticator",
+								"refresh_token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change_password",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "{{application}}",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"current_password\": \"\",\n    \"new_password\": \"\",\n    \"confirm_new_password\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/authenticator/change_password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"authenticator",
+								"change_password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot password",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "{{application}}",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"email\": \"fannakab01@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/authenticator/forgot_password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"authenticator",
+								"forgot_password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot password recheck otp",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "{{application}}",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"email\": \"company01@gmail.com\",\n \"verifyType\": \"FORGOT_PASSWORD\",\n \"otp\": \"689955\",\n \"new_password\": \"1234\",\n \"confirm_new_password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/authenticator/submit/forgot_password/otp",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"authenticator",
+								"submit",
+								"forgot_password",
+								"otp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Account info",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "{{application}}",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/account/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"account",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account Upload Image",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "{{application}}",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/sornsakmanadee/Downloads/anony.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/account/image/upload",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"account",
+								"image",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Third Party",
+			"item": [
+				{
+					"name": "Deposit History",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "WEB",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/thirdparty/signal/FUTURE/100",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"thirdparty",
+								"signal",
+								"FUTURE",
+								"100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "By Pass User for Master Trade",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "WEB",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/thirdparty/copy/trade/request/harutr@gmail.com?amount=111&symbol=BTC/USDT&orderType=MARKET&side=BUY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"thirdparty",
+								"copy",
+								"trade",
+								"request",
+								"harutr@gmail.com"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "111"
+								},
+								{
+									"key": "symbol",
+									"value": "BTC/USDT"
+								},
+								{
+									"key": "orderType",
+									"value": "MARKET"
+								},
+								{
+									"key": "side",
+									"value": "BUY"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "Notification lists",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "WEB",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/notification/2/ALL_ACTION/20/DESC",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"notification",
+								"2",
+								"ALL_ACTION",
+								"20",
+								"DESC"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Notification Detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "WEB",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/notification/detail/61d447f85af9f6d4c9cd01c2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"notification",
+								"detail",
+								"61d447f85af9f6d4c9cd01c2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "read One",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "WEB",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/notification/read/id/61d447f85af9f6d4c9cd01c2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"notification",
+								"read",
+								"id",
+								"61d447f85af9f6d4c9cd01c2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "read all",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "WEB",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/notification/read/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"notification",
+								"read",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete all",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basicPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basicUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-platform",
+								"value": "WEB",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version}}/notification/delete/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version}}",
+								"notification",
+								"delete",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,67 @@
+{
+    "server": {
+      "host": "localhost",
+      "port": 33333
+    },
+    "jwt": {
+      "hash": "Doo316AFU82V5hWOVZJZNpO0Lsv6C2bP9NqxCAxPRcuvHbpfpSPvd6HLxGf49EGRExPROD_pRojEct_kOaJs_sEtuP@2022",
+      "options": {
+        "expiresIn": "1d"
+      },
+      "optionsMobile": {
+        "expiresIn": "1d"
+      }
+    },
+    "linenotification": {
+      "projectname": "payment-non-bank-api",
+      "authorization": "Bearer gF53dOrciJueUfMZ7X6p3LRykMnP8QMjrj5YbR9gu09"
+    },
+    "auth": {
+      "username": "payment-non-bank-api",
+      "password": "fFFF@344jgDbIsrAQxQiqZ56yF*&!%Vdqh8m0CmsbvhC7pPAY1JMqCKEYYb16uTflhVSyOasxPROD_PROJECT_KOAJS_MONGO_SETUP@2022"
+    },
+    "twofactor": {
+      "issuer": "projectKoajsMongoSetup - PROD",
+      "secret_length": "10",
+      "encoding": "base32",
+      "algorithm": "sha256"
+    },
+    "google": {
+      "projectId": "817856881790",
+      "keyFilename": "Minerta-Blockchain-d5c6524c5f94.json",
+      "storage": {
+        "host": "https://storage.googleapis.com",
+        "bucket": "project_koajs_mongo_setup",
+        "path_image": "images",
+        "location": "asia-southeast1",
+        "regional": true
+      }
+    },
+    "redis": {
+      "url": "",
+      "host": "localhost",
+      "port": 6379
+    },
+    "mongo": {
+      "host": "localhost",
+      "port": "27017",
+      "username": "admin",
+      "password": "1234",
+      "database": ""
+    },
+    "mail": { 
+      "service": "Mailgun",
+      "email": "test.info@test.com",
+      "password": "45bcafef6f09ae9ae0ffcd9ba4616423-20ebde82-c10e6e14",
+      "host": "smtp.eu.mailgun.org",
+      "port": 587,
+      "from": "test info@test.com",
+      "site_url": "https://www.google.com",
+      "apiKey": "62ee971b6c3dc51972fcf7eb1c8b5eda-20ebde82-572db06e",
+      "domain": "mg.test.co"
+    },
+    "_filterFile": {
+      "image_type": ["jpg", "JPG", "jpeg", "JPEG", "gif", "png", "webp", "pdf"]
+    }
+  }
+  
